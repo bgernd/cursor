@@ -361,3 +361,58 @@ body {
     transition: none !important;
   }
 }
+
+/* Transactions List Styles */
+.transactions-card {
+  margin-bottom: 20px;
+}
+
+.transactions-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.transactions-list {
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  color: #333;
+}
+
+.transaction-row {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.transaction-row:last-child {
+  border-bottom: none;
+}
+
+.transaction-type {
+  font-weight: bold;
+}
+
+.transaction-date {
+  font-size: 12px;
+  color: #888;
+}
+
+.transaction-amount {
+  font-weight: bold;
+}
+
+.transaction-amount.positive {
+  color: #1abc9c;
+}
+
+.transaction-amount.negative {
+  color: #e74c3c;
+}
+
+.transaction-amount.transfer {
+  color: #3498db;
+}
