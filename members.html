@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#FF6B24">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+  <title>成员列表</title>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iI0ZGNkIyNCIvPjwvc3ZnPg==" alt="AC Capital Logo">
+      <span class="logo-text">AC Capital</span>
+    </div>
+  </div>
+
+  <div class="invite-section">
+    <input type="email" id="inviteEmail" class="invite-input" placeholder="请输入邮箱地址" required />
+    <button class="btn btn-primary invite-btn" onclick="sendInvite(event)">发送邀请</button>
+    <span id="inviteFeedback" class="invite-feedback"></span>
+  </div>
+
+  <div class="card members-list-card">
+    <div class="members-list-title">
+      <i class="fas fa-users"></i> 成员列表
+    </div>
+    <div class="members-list">
+      <div class="member-item has-children" onclick="toggleSubList(this)">
+        <span class="toggle-icon"><i class="fas fa-chevron-right"></i></span>
+        <img class="member-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar">
+        <span class="member-name">张三</span>
+      </div>
+      <div class="sub-members-list">
+        <div class="member-item sub-member">
+          <img class="member-avatar" src="https://randomuser.me/api/portraits/women/12.jpg" alt="avatar">
+          <span class="member-name">小张</span>
+        </div>
+        <div class="member-item sub-member">
+          <img class="member-avatar" src="https://randomuser.me/api/portraits/men/13.jpg" alt="avatar">
+          <span class="member-name">小李</span>
+        </div>
+      </div>
+      <div class="member-item has-children" onclick="toggleSubList(this)">
+        <span class="toggle-icon"><i class="fas fa-chevron-right"></i></span>
+        <img class="member-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="avatar">
+        <span class="member-name">李四</span>
+      </div>
+      <div class="sub-members-list">
+        <div class="member-item sub-member">
+          <img class="member-avatar" src="https://randomuser.me/api/portraits/women/55.jpg" alt="avatar">
+          <span class="member-name">小王</span>
+        </div>
+      </div>
+      <div class="member-item">
+        <img class="member-avatar" src="https://randomuser.me/api/portraits/men/65.jpg" alt="avatar">
+        <span class="member-name">王五</span>
+      </div>
+    </div>
+  </div>
+<script>
+function toggleSubList(el) {
+  const next = el.nextElementSibling;
+  if (next && next.classList.contains('sub-members-list')) {
+    next.classList.toggle('open');
+    const icon = el.querySelector('.toggle-icon i');
+    if (next.classList.contains('open')) {
+      icon.classList.remove('fa-chevron-right');
+      icon.classList.add('fa-chevron-down');
+    } else {
+      icon.classList.remove('fa-chevron-down');
+      icon.classList.add('fa-chevron-right');
+    }
+  }
+}
+function sendInvite(e) {
+  e.preventDefault();
+  const email = document.getElementById('inviteEmail').value.trim();
+  const feedback = document.getElementById('inviteFeedback');
+  if (!email) {
+    feedback.textContent = '请输入有效的邮箱地址';
+    feedback.style.color = '#fff';
+    return;
+  }
+  // Simulate sending invitation
+  feedback.textContent = '邀请已发送到 ' + email;
+  feedback.style.color = '#ffe4d6';
+  document.getElementById('inviteEmail').value = '';
+  setTimeout(() => { feedback.textContent = ''; }, 3000);
+}
+</script>
+</body>
+</html> 

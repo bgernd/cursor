@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#FF6B24">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+  <title>个人资料</title>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iI0ZGNkIyNCIvPjwvc3ZnPg==" alt="AC Capital Logo">
+      <span class="logo-text">AC Capital</span>
+    </div>
+  </div>
+
+  <div class="card profile-card">
+    <div class="profile-avatar-section">
+      <img class="profile-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar">
+      <div class="profile-info">
+        <div class="profile-name">Tan Seng Wee</div>
+        <div class="certified-tag">Certified</div>
+      </div>
+    </div>
+    <form class="profile-form">
+      <div class="input-group">
+        <label for="profileEmail">邮箱</label>
+        <input type="email" id="profileEmail" value="tan@email.com" required />
+      </div>
+      <div class="input-group">
+        <label for="profilePhone">手机号</label>
+        <input type="tel" id="profilePhone" value="123-456-7890" required />
+      </div>
+      <button type="submit" class="btn btn-primary profile-save-btn">保存</button>
+    </form>
+  </div>
+
+</body>
+</html> 
