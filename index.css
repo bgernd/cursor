@@ -388,7 +388,12 @@ body {
   align-items: center;
   border-bottom: 1px solid #f0f0f0;
 }
-
+.transaction-row > div:last-child, .transaction-row > .transaction-amount, .transaction-row > .transaction-status {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
 .transaction-row:last-child {
   border-bottom: none;
 }
@@ -404,6 +409,8 @@ body {
 
 .transaction-amount {
   font-weight: bold;
+  min-width: 100px;
+  text-align: right;
 }
 
 .transaction-amount.positive {
