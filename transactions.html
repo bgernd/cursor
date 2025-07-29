@@ -19,6 +19,9 @@
     <div class="notification-icon">
       <i class="fas fa-bell"></i>
     </div>
+    <div class="show-image-btn" onclick="openImageDialog()">
+      <i class="fas fa-image"></i>
+    </div>
   </div>
 
   <div class="card transactions-card">
@@ -77,5 +80,19 @@
       <span>我的</span>
     </div>
   </div>
+  <div id="imageDialog" class="image-dialog-overlay" style="display:none;">
+    <div class="image-dialog">
+      <span class="close-btn" onclick="closeImageDialog()">&times;</span>
+      <img src="https://via.placeholder.com/300x200.png?text=Popup+Image" alt="Popup Image" class="popup-image">
+    </div>
+  </div>
+  <script>
+    function openImageDialog() {
+      document.getElementById('imageDialog').style.display = 'flex';
+    }
+    function closeImageDialog() {
+      document.getElementById('imageDialog').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
